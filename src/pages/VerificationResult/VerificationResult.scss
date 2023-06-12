@@ -1,0 +1,46 @@
+.verification-result {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
+    border-top: 1px solid #a7a7a7;
+  }
+
+  &__content:first-child {
+    margin: 10px 0;
+    border: none;
+  }
+
+  &__loaded-bar {
+    height: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  &__loading-bar {
+    height: 10px;
+    background-color: #2196f3;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    animation: progress 3s linear forwards;
+    width: 0;
+
+    &--progress.progress {
+      animation-play-state: running;
+    }
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
